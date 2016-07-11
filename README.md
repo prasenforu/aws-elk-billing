@@ -10,7 +10,7 @@ Currently it supports `AWS Cost and Usage Report` type, although it might work f
 ![Alt text](https://raw.githubusercontent.com/PriceBoardIn/aws-elk-billing/master/screenshots/aws cost and usage reports console.png)
 
 You can create `AWS Cost and Usage Report` at https://console.aws.amazon.com/billing/home#/reports
-Make sure that it contains the following dimensions only (Don't include Resource IDs)
+Make sure that it contains the following dimensions only **(Don't include Resource IDs)**
 * Account Identifiers
 * Invoice and Bill Information
 * Usage Amount and Unit
