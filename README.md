@@ -7,9 +7,19 @@ aws-elk-billing is a combination of configuration snippets and tools to assist w
 
 Currently it supports `AWS Cost and Usage Report` type, although it might work for other [AWS Billing Report Types](http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/detailed-billing-reports.html#other-reports) which contains some extra columns along with all the columns from `AWS Cost and Usage Report`.
 
-You can create `AWS Cost and Usage Report` at https://console.aws.amazon.com/billing/home#/reports
+![Alt text](https://raw.githubusercontent.com/PriceBoardIn/aws-elk-billing/master/screenshots/aws cost and usage reports console.png)
 
-or follow instructions at http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/detailed-billing-reports.html#turnonreports
+You can create `AWS Cost and Usage Report` at https://console.aws.amazon.com/billing/home#/reports
+Make sure that it contains the following dimensions only (Don't include Resource IDs)
+* Account Identifiers
+* Invoice and Bill Information
+* Usage Amount and Unit
+* Rates and Costs
+* Product Attributes
+* Pricing Attributes
+* Cost Allocation Tags
+
+Follow instructions at http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/detailed-billing-reports.html#turnonreports
 
 
 ### Architecture
@@ -48,13 +58,11 @@ Ports | Process
 ### Set S3 credentials and AWS Billing bucket and directory name
 Rename [prod.sample.env](https://github.com/PriceBoardIn/aws-elk-billing/blob/master/prod.sample.env) to `prod.env` and provide values for the following keys `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY`, `S3_BUCKET_NAME`, `S3_REPORT_PATH`
 
-##### `S3_BUCKET_NAME` = S3 bucket name (Refer the image below)
-##### `S3_REPORT_PATH` = Report path (Refer the image below)
-##### `S3_REPORT_NAME` = Report name (Refer the image below)
+##### `S3_BUCKET_NAME` = S3 bucket name (Refer the image above)
+##### `S3_REPORT_PATH` = Report path (Refer the image above)
+##### `S3_REPORT_NAME` = Report name (Refer the image above)
 
 `prod.env` is added in `.gitignore` so that you don't push your credentials upstream accidentally.
-
-![Alt text](https://raw.githubusercontent.com/PriceBoardIn/aws-elk-billing/master/screenshots/aws cost and usage reports console.png)
 
 ### Run Docker
 The entire process is automated through scripts and docker. All the components would be downloaded automatically inside your docker
