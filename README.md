@@ -86,3 +86,8 @@ The entire process is automated through scripts and docker. All the components w
     2. Depending on the size of AWS Billing CSV report `main.go` will take time to index all the data to Elasticsearch via Logstash.
 * You can view the dashboard in kibana, even while `main.go` is still indexing the data.
 * In order to index new data, you'll have to run `docker-compose up -d` again.
+
+## Feedback
+We'll love to hear feedback and ideas on how we can make it more useful. Just create an issue.
+
+Thanks
