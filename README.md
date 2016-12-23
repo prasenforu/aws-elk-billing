@@ -78,6 +78,7 @@ The entire process is automated through scripts and docker. All the components w
     To find IP of docker-machine `docker-machine ip default`
 
 3   . `sudo docker-compose stop` to shutdown all the docker containers.
+
 4   . `sudo docker-compose down` to shutdown and remove all the files from docker. **Note:** Next time you do a `docekr-compose up` every thing will start from scratch. Use this if you see some problems in your data or ES is timing out.
 
 ## Gotchas
