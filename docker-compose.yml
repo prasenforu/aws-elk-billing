@@ -23,7 +23,7 @@ services:
     command: bash -c "python -u /aws-elk-billing/orchestrate.py"
 
   logstash:
-    image: priceboard/logstash:2.3
+    image: logstash:5 
     ports:
     - 5140:5140
     depends_on:
@@ -35,7 +35,7 @@ services:
     command: "logstash -f /logstash.conf"
 
   kibana:
-    image: priceboard/kibana:4.5
+    image: kibana:5
     volumes:
     - ./kibana.yml:/opt/kibana/config/kibana.yml
     ports:
@@ -46,7 +46,7 @@ services:
     - elasticsearch:elasticsearch
 
   elasticsearch:
-    image: priceboard/elasticsearch:2.3.3
+    image: elasticsearch:5
     ports:
     - 9200:9200
     - 9300:9300
