@@ -22,7 +22,7 @@ services:
     command: bash -c "python -u /aws-elk-billing/orchestrate-test.py && nosetests --nologcapture test.tools.check_tools && bash test/scripts/check_add_del_modify_vis.sh && bash stop.sh"
 
   logstash:
-    image: logstash:5
+    image: logstash:5-alpine
     ports:
     - 5140:5140
     depends_on:
@@ -45,7 +45,7 @@ services:
     - elasticsearch:elasticsearch
 
   elasticsearch:
-    image: elasticsearch:5
+    image: elasticsearch:5-alpine
     ports:
     - 9200:9200
     - 9300:9300
