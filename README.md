@@ -8,7 +8,7 @@ aws-elk-billing is a combination of configuration snippets and tools to assist w
 
 Currently it supports `AWS Cost and Usage Report` type, although it might work for other [AWS Billing Report Types](http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/detailed-billing-reports.html#other-reports) which contains some extra columns along with all the columns from `AWS Cost and Usage Report`.
 
-![Alt text](https://github.com/prasenforu/aws-elk-billing/blob/master/screenshots/aws-report-usage-cost-updated.png)
+![Alt text](https://github.com/prasenforu/aws-elk-billing/blob/master/screenshots/aws-report-usage-cost.png)
 
 You can create `AWS Cost and Usage Report` at https://console.aws.amazon.com/billing/home#/reports
 Make sure that it contains the following dimensions only **(Don't include Resource IDs)**
@@ -62,6 +62,8 @@ Rename [prod.sample.env](https://github.com/PriceBoardIn/aws-elk-billing/blob/ma
 ##### `S3_BUCKET_NAME` = S3 bucket name (Refer the image above)
 ##### `S3_REPORT_PATH` = Report path (Refer the image above)
 ##### `S3_REPORT_NAME` = Report name (Refer the image above)
+
+![Alt text](https://github.com/prasenforu/aws-elk-billing/blob/master/screenshots/aws-report-usage-cost-prodenv.png)
 
 `prod.env` is added in `.gitignore` so that you don't push your credentials upstream accidentally.
 
