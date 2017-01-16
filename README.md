@@ -8,7 +8,7 @@ aws-elk-billing is a combination of configuration snippets and tools to assist w
 
 Currently it supports `AWS Cost and Usage Report` type, although it might work for other [AWS Billing Report Types](http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/detailed-billing-reports.html#other-reports) which contains some extra columns along with all the columns from `AWS Cost and Usage Report`.
 
-![Alt text](https://raw.githubusercontent.com/PriceBoardIn/aws-elk-billing/master/screenshots/aws cost and usage reports console.png "Overview")
+![Alt text](https://github.com/prasenforu/aws-elk-billing/blob/master/screenshots/aws cost and usage reports console.png "Overview")
 
 
 You can create `AWS Cost and Usage Report` at https://console.aws.amazon.com/billing/home#/reports
