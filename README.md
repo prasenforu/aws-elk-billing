@@ -2,8 +2,6 @@
 
 ![Alt text](https://github.com/prasenforu/aws-elk-billing/blob/master/screenshots/kibana-dashboard.png) 
 
-![Alt text]("Overview")
-
 ## Overview
  
 aws-elk-billing is a combination of configuration snippets and tools to assist with indexing AWS programatic billing access files(CSV's) and visualizing the data using Kibana.
