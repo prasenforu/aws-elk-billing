@@ -68,7 +68,7 @@ Rename [prod.sample.env](https://github.com/PriceBoardIn/aws-elk-billing/blob/ma
 `prod.env` is added in `.gitignore` so that you don't push your credentials upstream accidentally.
 
 ### Run Docker
-The entire process is automated through scripts and docker. All the components would be downloaded automatically inside your docker
+The entire process is automated through scripts and docker and docker-compose. All the components would be downloaded automatically inside your docker. If you are not ok with docker-compose follow link for docker-compose (https://docs.docker.com/compose/install/)
 
 1. ```sudo docker-compose up -d```
 2. View `Kibana` at http://localhost:5601
