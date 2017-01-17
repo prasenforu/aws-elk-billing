@@ -82,10 +82,11 @@ The entire process is automated through scripts and docker and docker-compose. A
 
 3   . `sudo docker-compose stop` to shutdown all the docker containers.
 
-4   . `sudo docker-compose down` to shutdown and remove all the files from docker. **Note:** Next time you do a `docker-compose up` every thing will start from scratch. Use this if you see some problems in your data or ES is timing out.
+4   . `sudo docker-compose down` to shutdown and remove all the files from docker. 
 
-***Note:*** Normally AWS send "Cost and Usage Report" daily to S3 bucket. This docker container does not fetch report from S3.
-So you need to restart your all container `docker-compose restrt` manually other wise put in host's crontab (Try to find when you are getting report file in your S3 based on that you can set cron time. 
+** Note #1 ** Next time you do a `docker-compose up` every thing will start from scratch. Use this if you see some problems in your data or ES is timing out.
+
+** Note #2 ** Normally AWS send "Cost and Usage Report" daily to S3 bucket. These docker container does not fetch report automatically from S3. So you need to restart your all container `docker-compose restrt` manually otherwise put in host's crontab (Try to find when you are getting report file in your S3 based on that you can set cron time). 
 
 ## Gotchas
 
