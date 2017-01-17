@@ -62,16 +62,18 @@ Ports | Process
 The entire process is automated through scripts and docker and docker-compose. All the components would be downloaded automatically inside your docker. If you are not ok with docker-compose follow link for docker-compose (https://docs.docker.com/compose/install/)
 
 Option #1
-1. Copy "aws-elk-billing-installlation-script.sh" file in your linux host. Just edit few lines in # Important ## section in that file as per your input (like below screen shot) and relax, script will do everything for you.
 
-2. View `Kibana` at http://localhost:5601
+Copy "aws-elk-billing-installlation-script.sh" file in your linux host. Just edit few lines in # Important ## section in that file as per your input (like below screen shot) and relax, script will do everything for you.
 
-    2.1 Use the **index pattern** as `aws-billing-*` and select the **time field** as `lineItem/UsageStartDate`
+1. View `Kibana` at http://localhost:5601
+
+    1.1 Use the **index pattern** as `aws-billing-*` and select the **time field** as `lineItem/UsageStartDate`
     
-    2.2 `Kibana AWS Billing Dashboard` http://localhost:5601/app/kibana#/dashboard/AWS-Billing-DashBoard
+    1.2 `Kibana AWS Billing Dashboard` http://localhost:5601/app/kibana#/dashboard/AWS-Billing-DashBoard
 
 Option #2
-1. clone this repository.
+
+1. Clone this repository.
 
 2. ### Set S3 credentials and AWS Billing bucket and directory name
 Rename [prod.sample.env](https://github.com/PriceBoardIn/aws-elk-billing/blob/master/prod.sample.env) to `prod.env` and provide values for the following keys `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY`, `S3_BUCKET_NAME`, `S3_REPORT_PATH`
