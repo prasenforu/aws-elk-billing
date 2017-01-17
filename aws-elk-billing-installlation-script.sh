@@ -3,10 +3,8 @@
 # This is "aws-elk-billing" Installation script
 # This will do everything for you. Just edit few lines in # Important ## section
 # Copy this script in Amazon linux (EC2) in home directory and run
-# It will other than EC2, just change username
+# It will run other than EC2, just change username
 # You can put in userdata as  well.
-
-# usern=ec2-user
 
 # Install docker, git and docker-compose
 
