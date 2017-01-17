@@ -56,7 +56,24 @@ Ports | Process
 5160 | Kibana
 5140 | Logstash
 
-### Set S3 credentials and AWS Billing bucket and directory name
+**Installation**
+
+### Run Docker
+The entire process is automated through scripts and docker and docker-compose. All the components would be downloaded automatically inside your docker. If you are not ok with docker-compose follow link for docker-compose (https://docs.docker.com/compose/install/)
+
+Option #1
+1. Copy "aws-elk-billing-installlation-script.sh" file in your linux host. Just edit few lines in # Important ## section in that file as per your input (like below screen shot) and relax, script will do everything for you.
+
+2. View `Kibana` at http://localhost:5601
+
+    2.1 Use the **index pattern** as `aws-billing-*` and select the **time field** as `lineItem/UsageStartDate`
+    
+    2.2 `Kibana AWS Billing Dashboard` http://localhost:5601/app/kibana#/dashboard/AWS-Billing-DashBoard
+
+Option #2
+1. clone this repository.
+
+2. ### Set S3 credentials and AWS Billing bucket and directory name
 Rename [prod.sample.env](https://github.com/PriceBoardIn/aws-elk-billing/blob/master/prod.sample.env) to `prod.env` and provide values for the following keys `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY`, `S3_BUCKET_NAME`, `S3_REPORT_PATH`
 
 ##### `S3_BUCKET_NAME` = S3 bucket name (Refer the image above)
@@ -67,22 +84,19 @@ Rename [prod.sample.env](https://github.com/PriceBoardIn/aws-elk-billing/blob/ma
 
 `prod.env` is added in `.gitignore` so that you don't push your credentials upstream accidentally.
 
-### Run Docker
-The entire process is automated through scripts and docker and docker-compose. All the components would be downloaded automatically inside your docker. If you are not ok with docker-compose follow link for docker-compose (https://docs.docker.com/compose/install/)
+3. run ```sudo docker-compose up -d```
+4. View `Kibana` at http://localhost:5601
 
-1. ```sudo docker-compose up -d```
-2. View `Kibana` at http://localhost:5601
-
-    2.1 Use the **index pattern** as `aws-billing-*` and select the **time field** as `lineItem/UsageStartDate`
+    4.1 Use the **index pattern** as `aws-billing-*` and select the **time field** as `lineItem/UsageStartDate`
     
-    2.2 `Kibana AWS Billing Dashboard` http://localhost:5601/app/kibana#/dashboard/AWS-Billing-DashBoard
+    4.2 `Kibana AWS Billing Dashboard` http://localhost:5601/app/kibana#/dashboard/AWS-Billing-DashBoard
     
-    2.3 For MAC replace localhost with the ip of docker-machine
+    4.3 For MAC replace localhost with the ip of docker-machine
     To find IP of docker-machine `docker-machine ip default`
 
-3   . `sudo docker-compose stop` to shutdown all the docker containers.
+5. `sudo docker-compose stop` to shutdown all the docker containers.
 
-4   . `sudo docker-compose down` to shutdown and remove all the files from docker. 
+6. `sudo docker-compose down` to shutdown and remove all the files from docker. 
 
 **Note #1** Next time you do a `docker-compose up` every thing will start from scratch. Use this if you see some problems in your data or ES is timing out.
 
