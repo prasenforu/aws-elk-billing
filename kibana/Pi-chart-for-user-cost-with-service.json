@@ -1,0 +1,10 @@
+{
+      "title": "Pi chart for user cost with service",
+      "visState": "{\"title\":\"Pi chart for user cost with service\",\"type\":\"pie\",\"params\":{\"addLegend\":true,\"addTooltip\":true,\"isDonut\":false,\"shareYAxis\":true,\"legendPosition\":\"right\"},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"sum\",\"schema\":\"metric\",\"params\":{\"field\":\"lineItem/UnblendedCost\",\"customLabel\":\"Total Cost\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"Tags.resourceTags/user_AutoTag_Creator.raw\",\"size\":35,\"order\":\"desc\",\"orderBy\":\"_term\",\"customLabel\":\"User\"}},{\"id\":\"3\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"lineItem/ProductCode.raw\",\"size\":69,\"order\":\"desc\",\"orderBy\":\"_term\",\"customLabel\":\"Service\"}},{\"id\":\"4\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"product/instanceType.raw\",\"size\":36,\"order\":\"desc\",\"orderBy\":\"_term\",\"customLabel\":\"Instance Type\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{\"vis\":{\"colors\":{\"AmazonRoute53\":\"#2F575E\",\"AmazonS3\":\"#967302\",\"AmazonEC2\":\"#3F6833\",\"AmazonCloudFront\":\"#99440A\"},\"legendOpen\":true}}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"aws-billing-*\",\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"*\"}},\"filter\":[]}"
+      }
+    }
