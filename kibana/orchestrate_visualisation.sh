@@ -69,3 +69,10 @@ if [[ $CONTENT == *'"found":false'* ]]
 then
     curl -XPUT "http://elasticsearch:9200/.kibana/visualization/Top-5-used-service-split-daily" -d "`cat top_5_used_service_split_daily.json`";
 fi
+
+
+CONTENT=`curl -XGET "http://elasticsearch:9200/.kibana/visualization/Pi-chart-for-user-cost-with-service"`;
+if [[ $CONTENT == *'"found":false'* ]]
+then
+    curl -XPUT "http://elasticsearch:9200/.kibana/visualization/Pi-chart-for-user-cost-with-service" -d "`cat Pi-chart-for-user-cost-with-service.json`";
+fi
